@@ -113,7 +113,10 @@ public class HelperContact extends HelperBase {
         saveContact();
         pause(500);
     }
-
+    //public void removeAllContacts() {
+        //List<Contact> contacts = getAllContacts();
+        //for (Contact contact : contacts) {
+           // removeContact(contact)
 
 }
 

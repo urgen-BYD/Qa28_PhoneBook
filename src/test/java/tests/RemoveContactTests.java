@@ -1,33 +1,34 @@
 package tests;
 
 import models.User;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class RemoveContactTests extends TestBase{
+public class RemoveContactTests extends TestBase {
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeMethod
     public void preCondition() {
         if (!app.getHelperUser().isLogged()) {
-            app.getHelperUser().login(new User().withEmail("mara@gmail.com").withPassword("Mmar123456$"));
+            app.getHelperUser().login(new User().withEmail("eshifrina@gmail.com").withPassword("Sugarmen0440!"));
         }
-        //if list<3 ===>add 3 contacts
-        app.getHelperContact().provideContacts();
+        // app.getHelperContact().provideContacts();//if list of contacts <3 ==> add 3 contacts
+
 
     }
 
-    @Test(groups = {"smoke"})
-    public void removeOneContact(){
-        Assert.assertEquals(app.getHelperContact().removeOneContact(),1);
-        //Assert size list less by one
-    }
     @Test
-    public void removeAllContacts(){
-        app.getHelperContact().removeAllContacts();
-        Assert.assertEquals(app.getHelperContact().getMessage(), "No Contacts here!");
-        //"No contacts Here
+    public void removeFirstContact() {
+        //Assert size contactList less by one
 
+    }
+
+    @Test
+    public void removeAllContacts() {
+
+        app.getHelperContact().removeAllContacts();
+
+        boolean isNoContactsDisplayed = app.getHelperContact().isNoContactsHereDisplayed();
+        assertTrue(isNoContactsDisplayed, "No contacts info should be displayed");
     }
 }

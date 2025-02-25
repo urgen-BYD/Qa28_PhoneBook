@@ -12,7 +12,7 @@ public class AddNewContactTests extends TestBase {
     @BeforeClass(alwaysRun = true)
     public void preCondition() {
         if (!app.getHelperUser().isLogged()) {
-            app.getHelperUser().login(new User().withEmail("mara@gmail.com").withPassword("Mmar123456$"));
+            app.getHelperUser().login(new User().withEmail("eshifrina@gmail.com").withPassword("Sugarmen0440!"));
         }
 
     }
@@ -21,11 +21,11 @@ public class AddNewContactTests extends TestBase {
     public void addContactSuccessAllFields(Contact contact) {
         int i = (int) (System.currentTimeMillis() / 1000 % 3600);
 //        Contact contact = Contact.builder()
-//                .name("Tony"+i)
-//                .lastName("Stark")
+//                .name("Tonyy"+i)
+//                .lastName("Starkk")
 //                .address("NY")
-//                .phone("3565946" + i)
-//                .email("stark" + i + "@gmail.com")
+//                .phone("3565945" + i)
+//                .email("starkk" + i + "@gmail.com")
 //                .description("all fields")
 //                .build();
         logger.info("Tests run with data: --->"+contact.toString());
